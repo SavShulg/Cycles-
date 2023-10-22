@@ -58,7 +58,7 @@ public class Main {
 
         int salary = 29000;
         int total = 0;
-        for (int i = 0; i <= 12; i++) {
+        for (int i = 0; i < 12; i++) {
             total = total + salary;
             System.out.println("Месяц- " + i + ", сумма накоплений равна " + total);
         }
@@ -69,7 +69,7 @@ public class Main {
 
         int salary1 = 29000;
         int total2 = 0;
-        for (int i = 0; i <= 12; i++) {
+        for (int i = 0; i < 12; i++) {
             total2 = total2 + salary1;
             total2 = total2 + total2 / 100;
             System.out.println("Месяц- " + i + ", сумма накоплений равна " + total2);
@@ -107,8 +107,8 @@ public class Main {
             start ++;
         }
         System.out.println(" ");
-        int start1 = 10;
-        for (; start1 >= 0; start1--) {
+
+        for (int start1 = 10; start1 >= 0; start1--) {
             System.out.print(start1 + " ");
         }
         System.out.println(
@@ -130,28 +130,21 @@ public class Main {
 
         // 4 Задача
 
-        double salaryVasiliy = 15000;
-        double vklad = 15000 * 0.07;
-        double total4 = 0;
-        int month = 0;
-        for (;total4 < 12_000_000; month++) {
-            total4 =  total4 + salaryVasiliy + vklad;
-            if (month % 1 == 0) {
-                System.out.println("Месяц " + month + ". Сумма накоплений равна " + total4);
-            }
-
+        int salaryVasiliy = 15000;
+        int total4 = salaryVasiliy;
+        for (int month = 1;total4 < 12_000_000; month++) {
+            total4 =  total4 + (total4 / 100 * 7);
+            System.out.println("Месяц " + month + ". Сумма накоплений равна " + total4);
         }
         System.out.println();
 
 
         // 5 Задача
 
-        double salaryVasiliy1 = 15000;
-        double vklad1 = 15000 * 0.07;
-        double total5 = 0;
-        int month1 = 0;
-        for (;total5 < 12_000_000; month1++) {
-            total5 =  total5 + salaryVasiliy1 + vklad1;
+        int salaryVasiliy1 = 15000;
+        int total5 = salaryVasiliy;
+        for (int month1 = 0;total5 < 12_000_000; month1++) {
+            total5 =  total5 + (total5 / 100 * 7);
             if (month1 % 6 == 0) {
                 System.out.println("Месяц " + month1 + ". Сумма накоплений равна " + total5);
             }
@@ -161,12 +154,10 @@ public class Main {
 
         // Задача 6
 
-        double salaryVasiliy2 = 15000;
-        double vklad2 = 15000 * 0.07;
-        double total6 = 0;
-        int month2 = 0;
-        for (;month2 <= 108 ;month2++) {
-            total6 =  total6 + salaryVasiliy2 + vklad2;
+        int salaryVasiliy2 = 15000;
+        int total6 = salaryVasiliy2;
+        for (int month2 = 0;month2 <= 9 * 12; month2++) {
+            total6 =  total6 + (total6 / 100 * 7);
 
             if (month2 % 6 == 0) {
                 System.out.println("Месяц " + month2 + ". Сумма накоплений равна " + total6);
@@ -179,9 +170,8 @@ public class Main {
 
         // 7 Задача
 
-        int friday = 5;
         //int dayMonth = 31;
-        for (; friday < 31; friday = friday + 7) {
+        for (int friday = 5; friday < 31; friday = friday + 7) {
             System.out.println(" Сегодня пятница, " + friday + "-е число. Необходимо подготовить отчет.");
         }
 
@@ -189,11 +179,13 @@ public class Main {
 
         // 8 Задача
 
-        int backYear = 1823;
-        int futureYear = 2123;
-        while (futureYear > backYear) {
-            backYear = backYear + 79;
-            System.out.println(backYear);
+        int backYear = 2023 - 200;
+        int futureYear = 2023 + 100;
+        while (backYear < futureYear) {
+            if (backYear % 79 == 0) {
+                System.out.println(backYear);
+            }
+            backYear++;
         }
     }
 }
